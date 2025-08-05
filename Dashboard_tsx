@@ -1,0 +1,67 @@
+import React, { useState, useEffect } from 'react';
+import { TrendingUp, ArrowUp, ArrowDown, Target, Zap, DollarSign, Percent, Clock } from 'lucide-react';
+import YieldChart from './YieldChart';
+import StrategyCard from './StrategyCard';
+
+const Dashboard = () => {
+  const [totalValue, setTotalValue] = useState(125847.32);
+  const [dailyYield, setDailyYield] = useState(847.23);
+  const [apy, setApy] = useState(18.7);
+
+  // Simulate real-time updates
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTotalValue(prev => prev + (Math.random() - 0.5) * 100);
+      setDailyYield(prev => prev + (Math.random() - 0.5) * 10);
+      setApy(prev => Math.max(0, prev + (Math.random() - 0.5) * 0.5));
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const strategies = [
+    {
+      id: '1',
+      name: 'USDC Yield Optimizer',
+      protocols: ['Aave', 'Yearn', 'Compound'],
+      apy: 12.4,
+      tvl: 45000,
+      risk: 'Low',
+      status: 'Active',
+      change24h: 2.3
+    },
+    {
+      id: '2',
+      name: 'ETH Leveraged Strategy',
+      protocols: ['GMX', 'Aave', 'Uniswap'],
+      apy: 24.8,
+      tvl: 32000,
+      risk: 'Medium',
+      status: 'Active',
+      change24h: -1.2
+    },
+    {
+      id: '3',
+      name: 'Multi-Asset Arbitrage',
+      protocols: ['Pendle', 'Curve', 'Balancer'],
+      apy: 31.5,
+      tvl: 28000,
+      risk: 'High',
+      status: 'Optimizing',
+      change24h: 5.7
+    }
+  ];
+
+  const protocolStats = [
+    { name: 'Aave', tvl: '$15.2B', apy: '8.3%', status: 'Active' },
+    { name: 'Yearn', tvl: '$2.8B', apy: '12.1%', status: 'Active' },
+    { name: 'GMX', tvl: '$1.1B', apy: '18.7%', status: 'Active' },
+    { name: 'Pendle', tvl: '$890M', apy: '22.4%', status: 'Active' }
+  ];
+
+  return (
+    <div className="space-y-8">
+      {/* Header Stats */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="bg-slate-800/30 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6">
+export default Dashboard;
