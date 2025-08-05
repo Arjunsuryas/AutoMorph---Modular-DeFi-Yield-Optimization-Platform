@@ -1,0 +1,24 @@
+import React, { useState, useEffect } from 'react';
+
+const YieldChart = () => {
+  const [data, setData] = useState([
+    { time: '00:00', yield: 18.2 },
+    { time: '04:00', yield: 18.7 },
+    { time: '08:00', yield: 19.1 },
+    { time: '12:00', yield: 18.9 },
+    { time: '16:00', yield: 19.4 },
+    { time: '20:00', yield: 18.8 },
+    { time: '24:00', yield: 19.2 }
+  ]);
+
+  // Simulate real-time updates
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setData(prev => {
+        const newData = [...prev];
+        newData[newData.length - 1] = {
+          ...newData[newData.length - 1],
+          yield: Math.max(0, newData[newData.length - 1].yield + (Math.random() - 0.5) * 2)
+        };
+        return newData;
+export default YieldChart;
