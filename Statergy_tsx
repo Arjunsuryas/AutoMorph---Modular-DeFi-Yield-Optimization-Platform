@@ -1,0 +1,35 @@
+import React, { useState } from 'react';
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div>
+                  <p className="text-slate-400 text-sm mb-1">Total Steps</p>
+                  <p className="text-xl font-bold text-white">{selectedLegos.length}</p>
+                </div>
+                <div>
+                  <p className="text-slate-400 text-sm mb-1">Risk Level</p>
+                  <p className="text-xl font-bold text-yellow-400">Medium</p>
+                </div>
+                <div>
+                  <p className="text-slate-400 text-sm mb-1">Gas Estimate</p>
+                  <p className="text-xl font-bold text-white">~$15</p>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <button className="flex-1 px-4 py-2 bg-slate-700/50 hover:bg-slate-700 rounded-lg text-white font-medium transition-colors flex items-center justify-center space-x-2">
+                  <Copy className="w-4 h-4" />
+                  <span>Save Template</span>
+                </button>
+                
+                <button className="flex-1 px-4 py-2 bg-purple-500 hover:bg-purple-600 rounded-lg text-white font-medium transition-colors">
+                  Test Strategy
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default StrategyBuilder;
