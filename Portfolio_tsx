@@ -1,0 +1,31 @@
+import React, { useState } from 'react';
+import { Wallet, TrendingUp, ArrowUpRight, ArrowDownRight, MoreHorizontal, Eye, ExternalLink } from 'lucide-react';
+
+const Portfolio = () => {
+  const [timeframe, setTimeframe] = useState('24h');
+
+  const portfolioData = {
+    totalValue: 125847.32,
+    change24h: 2847.23,
+    changePercent: 2.3,
+    assets: [
+      {
+        symbol: 'USDC',
+        name: 'USD Coin',
+        balance: 45000,
+        value: 45000,
+        change: 0,
+        allocation: 35.8,
+        strategies: ['USDC Yield Optimizer']
+      },
+      {
+        symbol: 'ETH',
+        name: 'Ethereum',
+        balance: 18.5,
+        value: 32000,
+        change: 1.2,
+        allocation: 25.4,
+        strategies: ['ETH Leveraged Strategy']
+      },
+      {
+export default Portfolio;
